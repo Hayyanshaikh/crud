@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f1f3f5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1{
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  border-radius: 5px;
+  grid-gap: 10px;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #0002;
+  border-radius: 3px;
+  font-size: 16px;
+  flex: 1;
+  outline: none;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+form button {
+  background-color: #435d7d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  transition: 0.2s ease;
+  text-transform: capitalize;
+  border-radius: 3px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+form button:hover {
+  background-color: #3a516f;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #435d7d;
+  padding: 15px;
+  border-radius: 3px 3px 0 0;
+}
+
+h3 {
+  font-size: 26px;
+  text-align: center;
+  color: white;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid #0002;
+  background-color: white;
+  max-height: 450px;
+  overflow: auto
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;;
+}
+thead{
+  position: sticky;
+  top: 0;
+}
+th {
+  font-weight: 500;
+  border-bottom: 1px solid #0001;
+  background-color: #f0f2f5;
+}
+
+th,
+td {
+  padding: 12px 20px;
+  text-align: left;
+}
+
+td {
+  color: #666;
+  font-size: 15px;
+}
+
+table tr:not(:last-of-type) :where(td) {
+  border-bottom: 1px solid #0001;
+}
+
+td:has(.action-btn) {
+  width: 200px;
+}
+
+.action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-right: 10px;
+}
+
+.edit_btn {
+  background-color: #e6e9ed;
+  color: black;
+}
+
+.delete_btn {
+  background-color: #d9534f;
+  color: #fff;
+}
+.edit_btn:hover {
+  background-color: #cfd8dc; /* Lighter background on hover */
+  color: #000; /* Darker text on hover */
+}
+
+.delete_btn:hover {
+  background-color: #c9302c; /* Darker background on hover */
+}
+tr:hover td {
+  background-color: #f8f9fa;
+}
