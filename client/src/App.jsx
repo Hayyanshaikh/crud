@@ -8,7 +8,7 @@ const App = () => {
   const [userVariant, setUserVariant] = useState({ bool: true, id: "" });
   //  API URI's
   const BASE_URL = "https://crud-api-liart.vercel.app/api";
-  const getUsers = `${BASE_URL}/users?limit=2`;
+  const getUsers = `${BASE_URL}/users`;
   const postUser = `${BASE_URL}/addUser`;
 
   // fetch data function
