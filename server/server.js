@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 // Enable CORS
-app.use(cors({ origin: '*' })); // Use a wildcard for development, update for production
+app.use(cors({ origin: ["https://crud-api-liart.vercel.app/"] })); // Use a wildcard for development, update for production
 
 // Middleware
 app.use(express.json());
