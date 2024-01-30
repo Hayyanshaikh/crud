@@ -11,13 +11,21 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 // Enable CORS
-app.use(cors({ origin: ["https://crud-client-five.vercel.app"] })); // Use a wildcard for development, update for production
+// Enable CORS for specific origin
+app.use(cors({ 
+  origin: ["https://crud-client-five.vercel.app"], // Replace with your frontend's URL
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allow specified methods
+  allowedHeaders: ["Content-Type"], // Allow only specified headers
+}));
 
 // Middleware
 app.use(express.json());
 
 // API routes
 app.use('/api', apiRoutes);
+
+// Handle preflight requests for all routes
+app.options('*', cors());
 
 // Start the server
 app.listen(PORT, () => {
