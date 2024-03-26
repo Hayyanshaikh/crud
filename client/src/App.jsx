@@ -7,7 +7,7 @@ const App = () => {
   const [userBtn, setUserBtn] = useState("Add user");
   const [userVariant, setUserVariant] = useState({ bool: true, id: "" });
   //  API URI's
-  const BASE_URL = "https://crud-api-liart.vercel.app/api";
+  const BASE_URL = "http://localhost:3000/api";
   const getUsers = `${BASE_URL}/users`;
   const postUser = `${BASE_URL}/addUser`;
 
@@ -40,7 +40,6 @@ const App = () => {
         // add a new user
         else if (newUser.name && newUser.email && newUser.age) {
           const response = await axios.post(postUser, newUser);
-          console.log(response);
           setUsers([response.data,...users]);
           setNewUser({ name: "", email: "", age: "" });
         } else {
@@ -154,7 +153,7 @@ const App = () => {
               {users &&
                 users.map((user, key) => (
                   <tr key={key}>
-                    <td>{key + 1}</td>
+                    <td>{user._id}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>{user.age} Year's</td>

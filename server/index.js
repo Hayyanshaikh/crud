@@ -10,13 +10,11 @@ const PORT = process.env.PORT || 3000;
 // Connect to MongoDB
 connectDB();
 
-// Enable CORS
 // Enable CORS for specific origin
-app.use(cors({ 
-  origin: ["https://crud-client-five.vercel.app"], // Replace with your frontend's URL
-  methods: ["GET", "POST", "PUT", "DELETE"], // Allow specified methods
-  allowedHeaders: ["Content-Type"], // Allow only specified headers
-}));
+// app.use(cors({ 
+//   origin: ["*"],
+// }));
+app.use(cors());
 
 // Middleware
 app.use(express.json());
